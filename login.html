@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -33,9 +33,34 @@
                 <!-- <a href="./index.html"> | Menu </a> -->
                 <!-- </div> -->
             </div>
-            <div class="head1">
 
+            <div class="head1">
+                <div class="grillado2">
+                    <div id="dolarnomb"> </div>
+                    <div id="dolarventa"> </div>
+                    <div id="dolarcomp"> </div>
+                </div>
             </div>
+
+            <script>
+                async function dolar() {
+                    const apiUSD = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
+                    const cotizacionDolar = await fetch(apiUSD);
+                    const cotizacionJSON = await cotizacionDolar.json();
+                    //console.log(cotizacionJSON[1].casa.compra)
+                    console.log('Dolar Ctdo con Liqui Compra ', cotizacionJSON[4]?.casa?.compra)
+                    console.log('Dolar Ctdo con Liqui Venta', cotizacionJSON[4]?.casa?.venta)
+                    console.log(cotizacionJSON[4]?.casa?.nombre);
+
+                    document.getElementById("dolarnomb").innerHTML = cotizacionJSON[4]?.casa?.nombre;
+                    document.getElementById("dolarventa").innerHTML = cotizacionJSON[4]?.casa?.compra, cotizacionJSON[4]?.casa?.venta;
+                    document.getElementById("dolarcomp").innerHTML = cotizacionJSON[4]?.casa?.venta;
+
+                }
+
+                dolar();
+            </script>
+
         </div>
         <br>
         <div class="menuretrac">
@@ -53,6 +78,7 @@
                 <li><a href="catalogo.html">CATALOGO</a></li>
                 <li><a href="login.html">LOGIN</a></li>
                 <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="diseño.html">DISEÑOS MODERNOS</a></li>
                 </li>
             </ul>
         </div>
@@ -107,7 +133,7 @@
             <!-- <label class="title4" for="uname"><b>Nombre de usuario</b></label><br> -->
             <input type="text" placeholder="Ingrese Nombre de usuario" name="uname_1" required><br>
             <!-- <label class="title4" for="psw"><b>Email</b></label><br> -->
-            <input type="password" placeholder="Ingrese Email" name="email" required> <br>
+             <input type="text" placeholder="Ingrese Email" name="email" required> <br>
             <!-- <label class="title4" for="psw"><b>Contraseña</b></label><br> -->
             <input type="password" placeholder="Ingrese Contraseña" name="psw_1" required><br>
             <!-- <label class="title4" for="psw"><b>Repetir Contraseña</b></label><br> -->

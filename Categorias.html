@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -26,16 +26,44 @@
                         alt="aaa" width="25px"></a>
                 <a href="https://www.youtube.com/" title="Youtube" target="_blank"> <img src="img/youtube.png" alt="aaa"
                         width="25px"></a>
-            </div>
-            <div class="head1" id="arriba">
+                <!-- </div>
+            <div class="head1"> -->
                 <!-- <h4> Donde Comprar? | disahome@disahome.com.ar</h4> -->
                 <a href="./contacto.html#Mapas">¿Dónde comprar? | </a>
                 <a href="mailto:info@disahome.com.ar">info@disahome.com.ar</a>
-                  <!--  <a href="./index.html"> | Menu </a> -->
+                <!-- <a href="./index.html"> | Menu </a> -->
                 <!-- </div> -->
             </div>
+
+            <div class="head1">
+                <div class="grillado2">
+                    <div id="dolarnomb"> </div>
+                    <div id="dolarventa"> </div>
+                    <div id="dolarcomp"> </div>
+                </div>
+            </div>
+
+            <script>
+                async function dolar() {
+                    const apiUSD = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
+                    const cotizacionDolar = await fetch(apiUSD);
+                    const cotizacionJSON = await cotizacionDolar.json();
+                    //console.log(cotizacionJSON[1].casa.compra)
+                    console.log('Dolar Ctdo con Liqui Compra ', cotizacionJSON[4]?.casa?.compra)
+                    console.log('Dolar Ctdo con Liqui Venta', cotizacionJSON[4]?.casa?.venta)
+                    console.log(cotizacionJSON[4]?.casa?.nombre);
+
+                    document.getElementById("dolarnomb").innerHTML = cotizacionJSON[4]?.casa?.nombre;
+                    document.getElementById("dolarventa").innerHTML = cotizacionJSON[4]?.casa?.compra, cotizacionJSON[4]?.casa?.venta;
+                    document.getElementById("dolarcomp").innerHTML = cotizacionJSON[4]?.casa?.venta;
+
+                }
+
+                dolar();
+            </script>
+
         </div>
-        <!-- <img src="./img2/logo-akai-smart.png" alt="Logo Akai" width="150px"> -->
+        <br>
         <div class="menuretrac">
             <ul>
                 <li><a href="index.html">INICIO</a></li>
@@ -51,32 +79,33 @@
                 <li><a href="catalogo.html">CATALOGO</a></li>
                 <li><a href="login.html">LOGIN</a></li>
                 <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="diseño.html">DISEÑOS MODERNOS</a></li>
                 </li>
             </ul>
         </div>
     </header>
 
     <main>
-        <div class="contarriba"> 
+        <div class="contarriba">
             <!-- <span>Volver Arriba</span>   -->
-        
-         <!-- <button type="button" class="btn btn4" href="./Categorias.html#arriba">Volver Arriba</button>
+
+            <!-- <button type="button" class="btn btn4" href="./Categorias.html#arriba">Volver Arriba</button>
             -->
-        
+
             <a href="./Categorias.html#arriba" class="btn btn4"> Volver Arriba </a>
 
-             <!-- <a href="Categorias.html#arriba">Volver Arriba</a> -->
-        </div>            
+            <!-- <a href="Categorias.html#arriba">Volver Arriba</a> -->
+        </div>
 
         <div class="lampakay">
             <h1>LÁMPARAS LED</h1>
             <img src="./img2/logo-akai-smart.png" alt="Logo Akai" width="150px">
 
         </div>
-       
+
         <div class="grillado">
             <div class="lamparas">
-                <img src="./img2/02-lamparas-bulbo_6w_a_18w.jpg" alt="Lámpara Bulbo" width="150px" >
+                <img src="./img2/02-lamparas-bulbo_6w_a_18w.jpg" alt="Lámpara Bulbo" width="150px">
                 <div class="info">
                     <p>LÁMPARA BULBO</p>
                 </div>
@@ -86,17 +115,17 @@
                 </div>
             </div>
             <div class="lamparas">
-                <img src="./img2/03-lamparas-gota-y-vela_4w_a_5w.jpg" alt="Lámpara Gota"  width="150px">
+                <img src="./img2/03-lamparas-gota-y-vela_4w_a_5w.jpg" alt="Lámpara Gota" width="150px">
                 <div class="info">
                     <p>LÁMPARA GOTA Y VELA</p>
                 </div>
-                    <div style="color:black; background-color: #e5272e; width: 60%; margin-left: 20%;">
+                <div style="color:black; background-color: #e5272e; width: 60%; margin-left: 20%;">
                     <p> 4W A 5W </p>
                 </div>
             </div>
 
             <div class="lamparas">
-                <img src="./img2/04-lamparas-cilindricas_5w_a_8w.jpg" alt="Lámpara Cilíndricas"  width="150px">
+                <img src="./img2/04-lamparas-cilindricas_5w_a_8w.jpg" alt="Lámpara Cilíndricas" width="150px">
                 <div class="info">
                     <p>LÁMPARA CILÍNDRICA</p>
                 </div>
@@ -106,7 +135,7 @@
             </div>
 
             <div class="lamparas">
-                <img src="./img2/05-lamparas-G9-y-perfume-e14.jpg" alt="Lámpara Perfume"  width="150px">
+                <img src="./img2/05-lamparas-G9-y-perfume-e14.jpg" alt="Lámpara Perfume" width="150px">
                 <div class="info">
                     <p>LÁMPARA G9 Y PERFUME E14</p>
                 </div>
@@ -116,7 +145,7 @@
             </div>
 
             <div class="lamparas">
-                <img src="./img2/06-lamparas-dicro-y-ar111.jpg" alt="Lámpara Dicro"  width="150px">
+                <img src="./img2/06-lamparas-dicro-y-ar111.jpg" alt="Lámpara Dicro" width="150px">
                 <div class="info">
                     <p>LÁMPARA DICRO Y AR111</p>
                 </div>
@@ -126,7 +155,7 @@
             </div>
 
             <div class="lamparas">
-                <img src="./img2/07-linea-emergency.jpg" alt="Lámpara Emergency"  width="150px">
+                <img src="./img2/07-linea-emergency.jpg" alt="Lámpara Emergency" width="150px">
                 <div class="info">
                     <p>LÁMPARAS LÍNEA EMERGENCY</p>
                 </div>
@@ -136,7 +165,7 @@
             </div>
 
             <div class="lamparas">
-                <img src="./img2/08-lamparas-vintage.jpg" alt="Lámpara Vintage"  width="150px">
+                <img src="./img2/08-lamparas-vintage.jpg" alt="Lámpara Vintage" width="150px">
                 <div class="info">
                     <p>LÁMPARAS VINTAGE</p>
                 </div>
@@ -146,7 +175,7 @@
             </div>
 
             <div class="lamparas">
-                <img src="./img2/09-lamparas-globo.jpg" alt="Lámpara Glogo"  width="150px">
+                <img src="./img2/09-lamparas-globo.jpg" alt="Lámpara Glogo" width="150px">
                 <div class="info">
                     <p>LÁMPARAS GLOBO</p>
                 </div>
@@ -156,7 +185,7 @@
             </div>
 
             <div class="lamparas">
-                <img src="./img2/10-lamparas-par-3038.jpg" alt="Lámpara Par"  width="150px">
+                <img src="./img2/10-lamparas-par-3038.jpg" alt="Lámpara Par" width="150px">
                 <div class="info">
                     <p>LÁMPARAS PAR3 0-38</p>
                 </div>
@@ -419,8 +448,8 @@
                 </video>
                 <div class="info">
                     <p>PROYECTOR LED DE ALTA POTENCIA/p>
-                    </div>
-                    <div style="color:black; background-color: #e5272e; width: 60%; margin-left: 20%;">
+                </div>
+                <div style="color:black; background-color: #e5272e; width: 60%; margin-left: 20%;">
                     <p> 250W A 600W </p>
                 </div>
             </div>
@@ -432,8 +461,8 @@
                 </video>
                 <div class="info">
                     <p>PROYECTOR LED COLOR ROJO,VERDE,AZUL Y AMARILLO/p>
-                    </div>
-                    <div style="color:black; background-color: #e5272e; width: 60%; margin-left: 20%;">
+                </div>
+                <div style="color:black; background-color: #e5272e; width: 60%; margin-left: 20%;">
                     <p> 250W A 600W </p>
                 </div>
             </div>
@@ -455,11 +484,19 @@
         </section>
 
     </main>
-
     <footer>
+        <br>
+        <div class="piedepagina">
+            <a href=""><img class="pie_log" src="./img/logosmart.png" alt="Logo"></a>
+            <a class="donde">Av Córdoba 5623 1° Piso | CABA | Argentina | </a>
+            <!-- <a class="mail"><a href="mailto:info@disahome.com.ar">info@disahome.com.ar</a> -->
 
+            <a id="izq" href=""><img class="inst" src="./img/whatsapp.png" alt="what" width="30px" height="30px"></a>
+            <a href=""><img class="inst" src="./img/facebook2.png" alt="what" width="30px" height="30px"></a>
+            <a href=""><img class="inst" src="./img/descarga.png" alt="what" width="30px" height="30px"></a>
+
+        </div>
     </footer>
-
 </body>
 
 </html>
